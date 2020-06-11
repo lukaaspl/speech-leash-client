@@ -1,19 +1,23 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "styles/global.css";
+import { ConnectedRouter } from "connected-react-router";
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router } from "react-router-dom";
+import { Provider } from "react-redux";
+import store, { history } from "store";
 import { ThemeProvider } from "styled-components";
+import "styles/global.css";
 import theme from "theme";
 import Root from "./Root";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <ThemeProvider theme={theme}>
-        <Root />
-      </ThemeProvider>
-    </Router>
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <ThemeProvider theme={theme}>
+          <Root />
+        </ThemeProvider>
+      </ConnectedRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
