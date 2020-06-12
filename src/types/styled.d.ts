@@ -21,6 +21,8 @@ interface Weights {
 }
 
 interface Colors {
+  primary: string;
+  secondary: string;
   black: string;
   white: string;
 }

@@ -19,8 +19,10 @@ const theme: DefaultTheme = {
     bold: 700,
   },
   colors: {
-    black: "#212121",
-    white: "#f6f6f6",
+    primary: "#fd7121",
+    secondary: "#b95071",
+    black: "#0c151d",
+    white: "#eff2ef",
   },
 };
 
