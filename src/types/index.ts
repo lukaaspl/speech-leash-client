@@ -3,6 +3,7 @@ import { RouteName } from "consts";
 
 export interface AppRoute extends RouteProps {
   name: RouteName;
+  path: string;
 }
 
 export interface Phrase {
