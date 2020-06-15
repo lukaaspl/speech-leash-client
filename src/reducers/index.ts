@@ -1,23 +1,11 @@
 import { combineReducers } from "redux";
 import { connectRouter } from "connected-react-router";
 import { History } from "history";
-
-const appReducer = () => {
-  return {
-    x: "d",
-  };
-};
-
-const wordsReducer = () => {
-  return {
-    hello: "world",
-  };
-};
+import phrasesReducer from "./phrases";
 
 const createRootReducer = (history: History) =>
   combineReducers({
-    app: appReducer,
-    words: wordsReducer,
+    phrases: phrasesReducer,
     router: connectRouter(history),
   });
 

@@ -28,7 +28,7 @@ const Breadcrumbs: React.FC = () => {
               path.replace(`:${paramName}`, match.params[paramName]),
             path
           );
-          
+
           return { path: injectedPath, name };
         }
 
@@ -40,16 +40,21 @@ const Breadcrumbs: React.FC = () => {
 
   return (
     <BreadcrumbComponent>
-      {breadcrumbs.map(({ name, path }, index) => (
-        <BreadcrumbItem
-          key={index}
-          linkAs={(props: Omit<React.PropsWithoutRef<NavLinkProps>, "to">) => (
-            <StyledNavLink exact to={path} {...props} />
-          )}
-        >
-          {name}
-        </BreadcrumbItem>
-      ))}
+      {breadcrumbs.map(({ name, path }, index) => {
+        const isActive = !breadcrumbs[index + 1];
+
+        return (
+          <BreadcrumbItem
+            key={index}
+            active={isActive}
+            linkAs={(
+              props: Omit<React.PropsWithoutRef<NavLinkProps>, "to">
+            ) => <StyledNavLink exact to={path} {...props} />}
+          >
+            {name}
+          </BreadcrumbItem>
+        );
+      })}
     </BreadcrumbComponent>
   );
 };
