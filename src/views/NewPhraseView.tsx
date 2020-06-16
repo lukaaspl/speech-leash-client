@@ -3,18 +3,15 @@ import MainTemplate from "templates/MainTemplate";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import styled from "styled-components";
-
-const Heading = styled.h2.attrs({ className: "display-4" })`
-  margin-bottom: 10px;
-`;
+import SectionHeading from "components/SectionHeading";
 
 const StyledForm = styled(Form)`
   max-width: 700px;
 `;
 
-const NewPhraseView = () => (
+const NewPhraseView: React.FC = () => (
   <MainTemplate>
-    <Heading>Add new phrase</Heading>
+    <SectionHeading>Add new phrase</SectionHeading>
     <StyledForm>
       <Form.Group>
         <Form.Label>Phrase</Form.Label>

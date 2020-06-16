@@ -4,7 +4,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  padding: 10px 30px;
+  padding: 5px 30px;
 `;
 
 interface MainTemplateProps {

@@ -1,3 +1,4 @@
+import SectionHeading from "components/SectionHeading";
 import { phrases, RouteName } from "consts";
 import { kebabCase } from "lodash";
 import React from "react";
@@ -8,7 +9,7 @@ import { getRoutePath } from "utils/routing";
 const PhraseListView = () => {
   return (
     <MainTemplate>
-      <h1>Phrase List</h1>
+      <SectionHeading>Phrase List</SectionHeading>
       <ul>
         {phrases.map(({ id, phrase, translation, createdAt }) => {
           const phraseLinkPath = getRoutePath(RouteName.Phrase, {
